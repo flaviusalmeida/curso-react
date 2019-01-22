@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Home from './Home';
+import AutorBox from './Autor';
+import './index.css';
 
 ReactDOM.render(
-    <App />, 
-    document.getElementById('root'));
-serviceWorker.unregister();
+  <BrowserRouter >
+    <div>
+        <App>
+            <Route exact path="/" component={Home} />
+            <Route path="/autor" component={AutorBox}/> 
+            <Route path="/livro" /> 
+        </App>
+    </div>
+  </BrowserRouter>,
+  document.getElementById('root'));
