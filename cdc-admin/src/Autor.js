@@ -67,7 +67,6 @@ class FormularioAutor extends Component {
 }
 
 class TabelaAutores extends Component {
-
     render() {
         return(
             <div>
@@ -103,7 +102,7 @@ export default class AutorBox extends Component {
         this.state = {lista : []};
     }
     
-    componentWillMount(){
+    componentDidMount(){
         $.ajax({
             url:"https://cdc-react.herokuapp.com/api/autores",
             dataType: 'json',
